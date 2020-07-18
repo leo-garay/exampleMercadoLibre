@@ -3,13 +3,13 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        build(job: 'Compilar', propagate: true, quietPeriod: 11, wait: true)
+        sh 'npm install'
       }
     }
 
     stage('prod') {
       steps {
-        sh 'npm install'
+        sh 'npm start'
       }
     }
 
